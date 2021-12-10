@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
+import "./Booking.css"
 
 
 export const BookingForm = () => {
@@ -51,8 +52,8 @@ export const BookingForm = () => {
 
 
     return (
-        <form className="BookingForm">
-            <h2 className="bookingForm__title">Book Vinny Van-Go</h2>
+        <center><form className="BookingForm">
+            <h2 className="bookingForm__title">BOOK VINNY VAN-GO</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name"></label>
@@ -138,7 +139,7 @@ export const BookingForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">I am planning an event and would like more information via email</label>
+                   <div className="event" htmlFor="name">I am planning an event and would like more information via email</div>
                     <input type="checkbox"
                         // copying existing state for state object that is updated when user interacts
                         onChange={
@@ -175,10 +176,11 @@ export const BookingForm = () => {
 
 
 
-            <button onClick={submitBooking} className="btn btn-primary">
+            <button onClick={submitBooking} className="button">
 
                 Book!
             </button>
         </form>
+        </center>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
+import "./Booking.css"
 
 export const SingleBooking = () => {
     const [booking, updateBooking] = useState ({})
@@ -16,10 +17,14 @@ export const SingleBooking = () => {
         )
     
         return (
-            <>
+            <><center>
+            <div class="singleBook">
                 <section className="booking">
                     <h3 className="booking__description">{booking.name} has a booking for <i>Vinny Van-Go</i> to arrive at {booking.address} on {booking.date} for a party of {booking.attendance}, see you then!</h3> 
                 </section>
+                </div>
+                </center>
             </>
+
         )
     }

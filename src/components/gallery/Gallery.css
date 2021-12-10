@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap');
+
+.gallery {
+    color:#675746;
+    font-family: 'Lora', serif;
+    margin: 1px;
+    padding: -50px;
+    font-size: 12px;
+}
+
+.galleryInfo {
+    color:#675746;
+    font-family: 'Lora', serif;
+    padding: 12px;
+    margin: 40px;
+    border: #ae7379 2px solid;
+    border-radius: 20px;
+    background-color: #f1e4db;
+    width: 300px;
+
+ }
+
+ .galleryPhoto {
+     padding: 30px;
+     margin: -10px;
+     width: 34%;
+ }
+
+ .galleryTitle {
+     margin: 80px;
+     color: #b7784d;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 90px;
+     margin: 60px;
+     padding: 40px;
+ }

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap');
+
+div.GalleryForm {
+
+    background-color: #ffff;
+    text-align: center;
+    padding: 20px;
+
+
+
+}
+
+.button {
+    background-color: #d4b9ac;
+    border: #675746 1px solid;
+    color: #675746;
+    margin: 20px;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  .GalleryForm__title {
+      color: #b7784d;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 90px;
+      margin: 70px;
+  }
+
+  .form-control {
+    font-family: 'Lora', serif;
+ 
+    
+  }
+
+  .form-group {
+      padding: -30px;
+      margin: -12px;
+      width: 400px;
+   
+    
+    
+  }
+
+ .materialsList {
+     color:#675746;
+     font-family: 'Lora', serif;
+ }
+
+ .pleaseCheck {
+    color:#675746;
+    font-family: 'Lora', serif;
+    margin: 30px;
+ }

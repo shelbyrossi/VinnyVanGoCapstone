@@ -16,6 +16,7 @@ export const VanGo = () => (
             <>
               <NavBar />
               <ApplicationViews />
+              
             </>
           );
         //   user not logged in, redirect to login URL 
