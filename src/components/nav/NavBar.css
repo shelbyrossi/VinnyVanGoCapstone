@@ -1,10 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap');
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-evenly;
+    font-family: 'Lora', serif;
+    padding: -12px;
+   
+
 }
 
 .navbar_item {
     flex-basis: 9%;
     list-style-type: none;
+    font-family: 'Lora', serif;
+    color: gray;
+}
+
+.navbar_link {
+    color: gray;
+    font-size: 14px;
+
 }

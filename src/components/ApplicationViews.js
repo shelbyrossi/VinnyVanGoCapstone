@@ -3,7 +3,12 @@ import { Route } from "react-router-dom"
 import { BookingForm } from "./booking/BookingForm"
 import { BookingList } from "./booking/Booking"
 import {SingleBooking} from "./booking/SingleBooking"
-
+import { MaterialsCatList } from "./theEar/TheEar"
+import { GalleryForm } from "./gallery/GalleryForm"
+import { ShowWorks } from "./gallery/Gallery"
+import {MaterialsForm} from "./gallery/MaterialsForm"
+import { ShowMaterials } from "./theEar/Materials"
+import {MainPage} from './Main.js'
 
 // listens for change (click of hyperlink) and renders appropriate component 
 export const ApplicationViews = () => {
@@ -26,7 +31,41 @@ export const ApplicationViews = () => {
             <Route exact path="/booking/:bookingId(\d+)">
                 {/* child */}
                 <SingleBooking/>
-            </Route>            
+            </Route>    
+
+            <Route exact path="/theEar">
+                {/* child */}
+                <MaterialsCatList/>
+            </Route>
+
+            <Route exact path="/GalleryForm">
+                {/* child */}
+                <GalleryForm/>
+            </Route>
+
+            <Route exact path="/Gallery">
+                {/* child */}
+                <ShowWorks/>
+            </Route>
+
+            <Route exact path="/materialCategory/:materialsId(\d+)">
+                {/* child */}
+                <ShowMaterials/>
+            </Route>
+            
+            <Route exact path="/main">
+                {/* child */}
+                <MainPage/>
+            </Route>
+            
+         
+
+            {/* when the url is bookings, display bookingsId- capturing after : and storing */}
+            {/* bookingsId is the key bookings component! */}
+            <Route exact path="/MaterialsForm">
+                {/* child */}
+                <MaterialsForm/>
+            </Route>  
          
            
 

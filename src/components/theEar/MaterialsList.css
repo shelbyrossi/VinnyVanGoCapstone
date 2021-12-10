@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap');
+
+.mTitle {
+    margin: 80px;
+    color: #b7784d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    margin: 40px;
+    padding: 40px;
+
+}
+
+
+.mList {
+
+    color:#675746;
+    font-family: 'Lora', serif;
+    padding: 12px;
+    margin: 50px;
+    border: #ae7379 2px solid;
+    border-radius: 20px;
+    background-color: #f1e4db;
+    font-size: 14px;
+    width: 550px;
+
+}
+
+.title {
+
+    margin: 80px;
+    color: #b7784d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+    margin: 60px;
+    padding: -60px;
+
+
+}
+
+.clickCat {
+     color:#675746;
+    font-family: 'Lora', serif;
+    padding: 10px;
+    margin: 60px;
+    border: #ae7379 2px solid;
+    border-radius: 20px;
+    background-color: #d6c583;
+    font-size: 14px;
+    width: 550px;
+
+
+}
+
+
+.links {
+   
+    color: #b7784d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    display: inline;
+    float: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+
+
+}
+
+
+.stock {
+
+ color:#675746;
+    font-family: 'Lora', serif;
+    margin: 20px;
+}
+
+
+
+.News {
+    margin: 80px;
+    color: #b7784d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin: 100px;
+    padding: 10px;
+}
+
+.vanImage {
+ margin: -20px;
+ border: white;
+
+}
+
+.newsBlock {
+
+    color:#675746;
+    font-family: 'Lora', serif;
+    padding: 20px;
+    margin: -100px;
+    border: #b7784d 2px solid;
+    border-radius: 20px;
+    background-color: #d6c583;
+    font-size: 14px;
+    width: 950px;
+
+
+}
+
+.fleaImage {
+    margin: -20px;
+    border: white;
+}

@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Montserrat:wght@900&family=Source+Sans+Pro:wght@200&display=swap');
+
+div.GalleryForm {
+
+    background-color: #eee3de;
+    text-align: center;
+    padding: 20px;
+  
+
+
+
+}
+
+.button {
+    background-color: #b7784d;
+    border: white 1px solid;
+    color: #565656;
+    margin: 20px;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  .bookingForm__title {
+      color: #b7784d;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 70px;
+      margin: 6px;
+      padding: 40px;
+  }
+
+  .form-control {
+    font-family: 'Lora', serif;
+    
+  }
+
+  .form-group {
+      padding: -30px;
+      width: 400px;
+    
+  }
+
+  .event {
+    font-family: 'Lora', serif;
+      color: #565656;
+  }
+  
+  .bookingTitle {
+    color: #b7784d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px;
+    margin: 6px;
+    padding: 40px;
+
+  }
+
+
+  .bookingList {
+
+    color:#675746;
+    font-family: 'Lora', serif;
+    padding: 12px;
+    
+
+
+}
+
+.singleBook {
+
+  color:#675746;
+  font-family: 'Lora', serif;
+  padding: 12px;
+  margin: 160px;
+  border: #ae7379 2px solid;
+  border-radius: 20px;
+  background-color: #f1e4db;
+  
+  
+}
+
+
+a:link {
+  color: #687d65;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #687d65;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #687d65;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #687d65;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
