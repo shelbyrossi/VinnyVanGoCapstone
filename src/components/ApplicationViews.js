@@ -10,6 +10,7 @@ import {MaterialsForm} from "./gallery/MaterialsForm"
 import { ShowMaterials } from "./theEar/Materials"
 import {MainPage} from './Main.js'
 
+
 // listens for change (click of hyperlink) and renders appropriate component 
 export const ApplicationViews = () => {
     return (
@@ -57,6 +58,7 @@ export const ApplicationViews = () => {
                 {/* child */}
                 <MainPage/>
             </Route>
+            
             
          
 

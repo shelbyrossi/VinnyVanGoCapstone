@@ -8,7 +8,7 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
 
-<li className="navbar_item active">
+            <li className="navbar_item active">
                 {/* link component 1 job: generate anchor tags 
                "to" attribute renders hyperlink to your DOM when clicked/change url in browser*/}
                 <Link className="navbar_link" to="/Main">Main</Link>
@@ -21,14 +21,14 @@ export const NavBar = () => {
                 <Link className="navbar_link" to="/bookingForm">Booking Form</Link>
 
             </li>
-               <li className="navbar_item active">
+            <li className="navbar_item active">
                 {/* link component 1 job: generate anchor tags 
                "to" attribute renders hyperlink to your DOM when clicked/change url in browser*/}
                 <Link className="navbar_link" to="/bookingList">Your Bookings</Link>
 
             </li>
 
-           <li className="navbar_item active">
+            <li className="navbar_item active">
                 {/* link component 1 job: generate anchor tags 
                "to" attribute renders hyperlink to your DOM when clicked/change url in browser*/}
                 <Link className="navbar_link" to="/theEar">THE EAR Newsletter</Link>
@@ -46,7 +46,8 @@ export const NavBar = () => {
                 <Link className="navbar_link" to="/Gallery">Gallery</Link>
 
             </li>
-          
+            
+
 
             <li className="navbar_item">
                 {/* when Logout is clicked, removes key value pair */}
@@ -62,4 +63,4 @@ export const NavBar = () => {
         </ul>
 
     )
-                }
+}

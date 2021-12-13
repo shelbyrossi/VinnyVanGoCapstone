@@ -15,7 +15,6 @@ export const MaterialsForm = ({mChoice, setmChoice}) => {
 
 
 
-
         }
 
         const fetchOption = {
@@ -38,7 +37,7 @@ export const MaterialsForm = ({mChoice, setmChoice}) => {
                 // function that takes a function and array as arguments & runs code when state changes (event listener)
                 .then(res => res.json())
 
-                // you have final array of customers defined in line 7
+                // you have final array of materials
                 .then((materials) =>
                 //  // function established in state variable - single argument is new state/API state
                 {

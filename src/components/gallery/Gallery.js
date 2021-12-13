@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react"
 import "./Gallery.css"
+import { UserName } from "./Users"
+
+
 
 
 
 export const ShowWorks = () => {
     const [works, showWorks] = useState([])
-    
- 
-    
+    const [userShown, showUserShown] = useState([])
+
+
+
 
 
 
@@ -19,7 +23,7 @@ export const ShowWorks = () => {
             fetch("http://localhost:8088/worksMaterials?_expand=works&_expand=materials")
                 // fetching data from the API and parsing into application state
                 .then(res => res.json())
-               
+
                 // you have final array of products defined in line 9
                 .then(
                     (submittedWork) => {
@@ -33,44 +37,54 @@ export const ShowWorks = () => {
 
 
 
-  
-   
-
-
-
-
 
     return (
         //  <> Fragment - putting all return elements into one JXS element 
         <>
-          
-      <center> <div class= "galleryTitle">GALLERY</div> </center>
+
+
+
+            <center> <div class="galleryTitle">GALLERY</div> </center>
             {
-                // iterate employes array and convert to objects to JXS (converstion = .map())
-              works.map(
-                    // // parameter to capture each indivual employeeObj as iterates
+                works.map(
                     (finishedWork) => {
-                        // // uniquely identify <h2> with a key, use .id since unique identifier
-                     return  <center>
-                         
-                         <div class="gallery"><div key={`finishedWorks-${finishedWork.id}`}>
-                        <img class= "galleryPhoto" src={finishedWork.works?.imageUrl}/><p>
-                        </p><div class="galleryInfo">
-                        <p>Title: {finishedWork.works?.title}</p>
-                        <p>Vinny Van-Go Materials Used: {finishedWork.materials.type}</p>
-                        <p>Artist Name: {finishedWork.works?.artist}</p>
-                        </div>
-                 
-                    </div>
-                    </div>
-                    </center>
+                        return <center>
+                            <div class="gallery"><div key={`finishedWorks-${finishedWork.id}`}>
+                                <p>
+                                <img class="galleryPhoto" src={finishedWork.works?.imageUrl} />
+                                </p><div class="galleryInfo">
+                               
+                                    <p>Title: {finishedWork.works?.title}</p>
+                                    <p>Vinny Van-Go Materials Used: {finishedWork.materials?.type}</p>
+                                    <p>Description: {finishedWork.works?.description}</p>
+                                  
+                                    <p>
+                                        <UserName user={userShown} showUser={showUserShown} finishedWork={finishedWork} />
+                                        
+                                            
+                                        
+
+
+
+
+                                    </p>
+
+
+                                </div>
+
+
+
+                            </div>
+                            </div>
+                        </center>
                     }
                 )
-                
+
+
             }
-          
+
+
         </>
     )
 }
 
-   
