@@ -2,33 +2,12 @@ import React, { useEffect, useState } from "react"
 import "./Materials.css"
 
 // allows access to values in gallery form - what did user select
-export const MaterialsForm = ({mChoice, setmChoice}) => {
-    const [materials, updateMaterials] = useState([])
-  
+export const MaterialsForm = ({ mChoice, setmChoice }) => {
+    const [materials, updateWorkMaterials] = useState([])
 
 
-    const submitWork = (evt) => {
-        evt.preventDefault()
-        const newchoice = {
+    
 
-            materialsId: mChoice,
-
-
-
-        }
-
-        const fetchOption = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newchoice)
-        }
-        return fetch("http://localhost:8088/worksMaterials", fetchOption)
-            .then(() => {
-
-            })
-    }
 
 
     useEffect(
@@ -41,7 +20,7 @@ export const MaterialsForm = ({mChoice, setmChoice}) => {
                 .then((materials) =>
                 //  // function established in state variable - single argument is new state/API state
                 {
-                    updateMaterials(materials)
+                    updateWorkMaterials(materials)
                 })
         },
         []
@@ -72,7 +51,12 @@ export const MaterialsForm = ({mChoice, setmChoice}) => {
 
                                     onChange={
                                         (evt) => {
-                                            setmChoice(materialOption.id)
+                                            const copy = { ...mChoice }
+                                            copy.chosenMaterials.has(materialOption.id)
+                                                ? copy.chosenMaterials.delete(materialOption.id)
+
+                                                : copy.chosenMaterials.add(materialOption.id)
+                                            setmChoice(copy)
                                         }
                                     }
                                     type="checkbox" />
@@ -88,7 +72,7 @@ export const MaterialsForm = ({mChoice, setmChoice}) => {
         </div>
 
 
-         
+
         </>
     )
 }

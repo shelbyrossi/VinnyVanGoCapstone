@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from "react"
 
 // passing props to Gallery.js
-export const UserName = ({ userShown, showUserShown, finishedWork }) => {
-    const [user, showUser] = useState([])
-    const [works, showWorks] = useState([])
+export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finishedWork}) => {
+    const [materialChoices, setMaterialChoices] = useState([])
+ 
 
 
 
@@ -13,15 +12,15 @@ export const UserName = ({ userShown, showUserShown, finishedWork }) => {
         // takes a function and array as arguments & runs code when state changes (event listener)
         () => {
             // Query string parameter
-            fetch("http://localhost:8088/users")
+            fetch("http://localhost:8088/worksMaterials")
                 // fetching data from the API and parsing into application state
                 .then(res => res.json())
 
-                // you have final array of users from line 6
+                // you have final array of materials
                 .then(
-                    (user) => {
+                    (material) => {
                  
-                      showUser(user)
+                      setMaterialChoices(material)
                     }
                 )
         },
@@ -33,7 +32,7 @@ export const UserName = ({ userShown, showUserShown, finishedWork }) => {
     useEffect(
         // prop for title card for individual works on Gallery.js
         () => {
-           showWorks(
+           setMaterialChoices(
                finishedWork
            )
         },
@@ -42,15 +41,16 @@ export const UserName = ({ userShown, showUserShown, finishedWork }) => {
     )
 
 
-    // finding user ids that equal userIds on works and storing it in foundUser
- const foundUser = user.find(u => u.id === finishedWork?.userId) 
+
+    // finding material.id that equals the materialId on works 
+ const foundMaterial = materialChoices.find(m=> m.id === finishedWork?.workId) 
 
     return (
         
         <>
         {/* calling foundUser in ternary, returning user.name if found */}
         {
-          foundUser?.id ? <><div>Artist: {foundUser.name}</div><div>{foundUser.email}</div></>
+         foundMaterial?.id ? <div>Materials Used: {foundMaterial.type}</div>
            
         //   returning none if id & userId do not match
           : <div>"none"</div>

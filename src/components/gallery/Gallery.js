@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./Gallery.css"
 import { UserName } from "./Users"
+import { MaterialChoices } from "./MaterialChoices"
 
 
 
@@ -9,6 +10,7 @@ import { UserName } from "./Users"
 export const ShowWorks = () => {
     const [works, showWorks] = useState([])
     const [userShown, showUserShown] = useState([])
+    const [showMaterialChoice, setMaterialChoice] = useState([])
 
 
 
@@ -20,7 +22,7 @@ export const ShowWorks = () => {
         // takes a function and array as arguments & runs code when state changes (event listener)
         () => {
             // Query string parameter
-            fetch("http://localhost:8088/worksMaterials?_expand=works&_expand=materials")
+            fetch("http://localhost:8088/works?_embed=worksMaterials")
                 // fetching data from the API and parsing into application state
                 .then(res => res.json())
 
@@ -51,17 +53,19 @@ export const ShowWorks = () => {
                         return <center>
                             <div class="gallery"><div key={`finishedWorks-${finishedWork.id}`}>
                                 <p>
-                                <img class="galleryPhoto" src={finishedWork.works?.imageUrl} />
+                                <img class="galleryPhoto" src={finishedWork.imageUrl} />
                                 </p><div class="galleryInfo">
                                
-                                    <p>Title: {finishedWork.works?.title}</p>
-                                    <p>Vinny Van-Go Materials Used: {finishedWork.materials?.type}</p>
-                                    <p>Description: {finishedWork.works?.description}</p>
+                                    <p>Title: {finishedWork.title}</p>
+                                    <p>Vinny Van-Go Materials Used: {finishedWork.workstype}</p>
+                                    <p>Description: {finishedWork.description}</p>
+                                    
                                   
                                     <p>
                                         <UserName user={userShown} showUser={showUserShown} finishedWork={finishedWork} />
                                         
-                                            
+                                        <MaterialChoices materialChoices={showMaterialChoice}
+                                        setMaterialChoices={setMaterialChoice}/>
                                         
 
 

@@ -25,8 +25,7 @@ export const ShowMaterials = () => {
                     }
                 )
         },
-        // leave DEPENDANCY ARRAY empty, or infinite loop
-        []
+      
     )
     
 
