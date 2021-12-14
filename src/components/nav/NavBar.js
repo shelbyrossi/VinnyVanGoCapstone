@@ -46,6 +46,13 @@ export const NavBar = () => {
                 <Link className="navbar_link" to="/Gallery">Gallery</Link>
 
             </li>
+
+             <li className="navbar_item active">
+                {/* link component 1 job: generate anchor tags 
+               "to" attribute renders hyperlink to your DOM when clicked/change url in browser*/}
+                <Link className="navbar_link" to="/materialChoices">MC</Link>
+
+            </li>
             
 
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 // passing props to Gallery.js
 export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finishedWork}) => {
     const [materialChoices, setMaterialChoices] = useState([])
+    const [works, showWorks] = useState([])
  
 
 
@@ -12,7 +13,7 @@ export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finished
         // takes a function and array as arguments & runs code when state changes (event listener)
         () => {
             // Query string parameter
-            fetch("http://localhost:8088/worksMaterials")
+            fetch("http://localhost:8088/worksMaterials?_expand=materials")
                 // fetching data from the API and parsing into application state
                 .then(res => res.json())
 
@@ -32,7 +33,7 @@ export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finished
     useEffect(
         // prop for title card for individual works on Gallery.js
         () => {
-           setMaterialChoices(
+           showWorks(
                finishedWork
            )
         },
@@ -42,23 +43,26 @@ export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finished
 
 
 
-    // finding material.id that equals the materialId on works 
- const foundMaterial = materialChoices.find(m=> m.id === finishedWork?.workId) 
+    // if the workId off of Workmaterials === id off of Works 
+ const foundMaterial = materialChoices.filter(m=> m.workId === finishedWork.id) 
 
     return (
-        
         <>
-        {/* calling foundUser in ternary, returning user.name if found */}
         {
-         foundMaterial?.id ? <div>Materials Used: {foundMaterial.type}</div>
+        foundMaterial.map(
+            (material) => {
+                return foundMaterial ? <div>{material.materials.type} </div>
            
         //   returning none if id & userId do not match
           : <div>"none"</div>
                                 
-                               
+                           
         }
 
-          
+        )
+    }
+    
         </>
-    )
+    
+        )
 }

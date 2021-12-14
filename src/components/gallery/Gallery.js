@@ -57,15 +57,15 @@ export const ShowWorks = () => {
                                 </p><div class="galleryInfo">
                                
                                     <p>Title: {finishedWork.title}</p>
-                                    <p>Vinny Van-Go Materials Used: {finishedWork.workstype}</p>
+                              
                                     <p>Description: {finishedWork.description}</p>
                                     
                                   
                                     <p>
-                                        <UserName user={userShown} showUser={showUserShown} finishedWork={finishedWork} />
+                                        <UserName user={userShown} showUser={showUserShown} finishedWork={finishedWork} /> </p>
                                         
-                                        <MaterialChoices materialChoices={showMaterialChoice}
-                                        setMaterialChoices={setMaterialChoice}/>
+                                       <p> Vinny Van Go Materials Used:<MaterialChoices materialChoices={showMaterialChoice}
+                                        setMaterialChoices={setMaterialChoice} finishedWork={finishedWork}/>
                                         
 
 
