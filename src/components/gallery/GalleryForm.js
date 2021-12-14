@@ -7,7 +7,9 @@ import "./Form.css"
 
 export const GalleryForm = () => {
     // creating hook for transient state of works and choices of materials
-    const [mChoice, setmChoice] = useState([])
+    const [mChoice, setmChoice] = useState({
+        chosenMaterials: new Set()
+    })
     const [works, newWork] = useState({
         title: "",
         userId: parseInt(localStorage.getItem("vango_customer")),
@@ -21,6 +23,14 @@ export const GalleryForm = () => {
 
     const history = useHistory()
 
+
+    const setMaterials = (id) => {
+        // Does the set contain the id?
+        // Ternary statement
+           mChoice.chosenMaterials.has(id)
+            ?mChoice.chosenMaterials.delete(id)  // Yes? Remove it
+            :mChoice.chosenMaterials.add(id)     // No? Add it
+    }
 
 
     const submitWork = (evt) => {
@@ -37,6 +47,7 @@ export const GalleryForm = () => {
 
         }
 
+
         // send above object to API
         const fetchOption = {
             method: "POST",
@@ -48,27 +59,15 @@ export const GalleryForm = () => {
 
 
 
+    
         return fetch("http://localhost:8088/works", fetchOption)
             .then(response => {
                 return response.json();
                 // returning response of fetch - new state object with id
             })
+            // pass above data through createMaterialChoice function
             .then((data) => {
-                // capturing the works.id from the response and storing it into secondId
-                const secondId = data.id
-
-                // fetching worksMaterials to post worksId (secondId) and materialsId
-                return fetch("http://localhost:8088/worksMaterials", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        worksId: secondId,
-                        materialsId: mChoice
-                    }
-                    )
-                })
+            createMaterialChoice(data)
             })
 
             .then(() => {
@@ -79,6 +78,44 @@ export const GalleryForm = () => {
     }
 
 
+
+    const createMaterialChoice = (work) => {
+        const fetchArray = []
+        // fetchArray - new array for all promises 
+        // posting each choice in the chosenMaterials object in the worksMaterials resource
+        mChoice.chosenMaterials.forEach(
+            (chosenMaterialsId) => {
+                /// pushing a promise to fetchArray
+                fetchArray.push(
+                    fetch("http://localhost:8088/worksMaterials", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            // chosentMaterialsId - Id in the new set() 
+                            materialsId: chosenMaterialsId,
+                            workId: work.id
+                            
+                        })
+                        
+                    })
+                )
+            
+                
+                // This is where all the fetches (Promises) all run and resolve
+                Promise.all(fetchArray)
+                .then(
+                    () => {
+                        // remove all choices
+                        mChoice.chosenMaterials.clear()
+                    }
+                    )
+                    
+                }
+            
+        )
+            }
 
 
     return (
