@@ -9,6 +9,7 @@ import { ShowWorks } from "./gallery/Gallery"
 import {MaterialsForm} from "./gallery/MaterialsForm"
 import { ShowMaterials } from "./theEar/Materials"
 import {MainPage} from './Main.js'
+import { MaterialChoices } from "./gallery/MaterialChoices"
 
 
 // listens for change (click of hyperlink) and renders appropriate component 
@@ -53,7 +54,11 @@ export const ApplicationViews = () => {
                 {/* child */}
                 <ShowMaterials/>
             </Route>
-            
+            <Route exact path="/materialChoices">
+                {/* child */}
+                <MaterialChoices/>
+            </Route>
+
             <Route exact path="/main">
                 {/* child */}
                 <MainPage/>
