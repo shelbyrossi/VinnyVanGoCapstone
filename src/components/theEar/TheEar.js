@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 
+
+// NEWSLETTER
+
+
 export const MaterialsCatList = () => {
     // declaring "materialCat" that defines state
     // declaring "setmaterialCat" that defines function that will modify state/set value of materialCategories
