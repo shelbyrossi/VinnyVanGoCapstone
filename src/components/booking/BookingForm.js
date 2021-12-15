@@ -4,7 +4,9 @@ import "./Booking.css"
 
 
 export const BookingForm = () => {
-    // creating hook for transient state of Booking info
+    // creating hook for transient state object of Booking info
+    // defining state as booking and the setter function as makeBooking 
+    // storing all in UseState Object
     const [booking, makeBooking] = useState({
         name: "",
         date: parseInt("12/05/21"),
@@ -34,6 +36,7 @@ export const BookingForm = () => {
 
         }
 
+        // posting new object to Bookings array in API 
        
         const fetchOption = {
             method: "POST",

@@ -13,12 +13,12 @@ export const MaterialsForm = ({ mChoice, setmChoice }) => {
     useEffect(
         () => {
             fetch("http://localhost:8088/materials")
-                // function that takes a function and array as arguments & runs code when state changes (event listener)
+                 // fetching data from the API and parsing into application state
                 .then(res => res.json())
 
                 // you have final array of materials
                 .then((materials) =>
-                //  // function established in state variable - single argument is new state/API state
+                 // data = response from the fetch, setting that response with updateWorkMaterials
                 {
                     updateWorkMaterials(materials)
                 })
