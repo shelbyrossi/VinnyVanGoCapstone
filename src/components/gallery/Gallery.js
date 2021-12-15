@@ -5,15 +5,18 @@ import { MaterialChoices } from "./MaterialChoices"
 
 
 
-
-
 export const ShowWorks = () => {
+
+// declaring "works" that defines state
+// declaring "showWorks" that defines function that will modify state/set value of works
+// useState passes a value as argument and returnes ARRAY WHEN INVOKED
+
+
     const [works, showWorks] = useState([])
+    // for props to show user from Users.js
     const [userShown, showUserShown] = useState([])
+    // for props to show materials from MaterialChoices.js
     const [showMaterialChoice, setMaterialChoice] = useState([])
-
-
-
 
 
 
@@ -26,7 +29,7 @@ export const ShowWorks = () => {
                 // fetching data from the API and parsing into application state
                 .then(res => res.json())
 
-                // you have final array of products defined in line 9
+                // you have final array of works & worksMaterials defined in line 15
                 .then(
                     (submittedWork) => {
                         showWorks(submittedWork)
@@ -50,7 +53,9 @@ export const ShowWorks = () => {
             {
                 works.map(
                     (finishedWork) => {
+                        
                         return <center>
+                            <div key={`showGallery-${finishedWork.id}`}></div>
                             <div class="gallery"><div key={`finishedWorks-${finishedWork.id}`}>
                                 <p>
                                 <img class="galleryPhoto" src={finishedWork.imageUrl} />
@@ -62,6 +67,7 @@ export const ShowWorks = () => {
                                     
                                   
                                     <p>
+                                        {/* invoking UserName from Users.js and MaterialChoices from MaterialChoices.js  */}
                                         <UserName user={userShown} showUser={showUserShown} finishedWork={finishedWork} /> </p>
                                         
                                        <p> Vinny Van Go Materials Used:<MaterialChoices materialChoices={showMaterialChoice}

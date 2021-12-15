@@ -1,0 +1,22 @@
+.registerButton {
+    background-color: #f1e4db;
+    font-family: 'Lora', serif;
+    border: #ae7379 2px solid;
+    border-radius: 20px;
+    color: #687d65;
+    margin: 3px;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.form--login{
+    color: #d6c583;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 6px;
+    padding: 40px;
+
+}

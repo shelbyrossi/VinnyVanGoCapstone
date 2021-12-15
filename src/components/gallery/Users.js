@@ -1,8 +1,12 @@
 
 import React, { useEffect, useState } from "react"
 
-// passing props to Gallery.js
+// passing props to Gallery.js finishedWork in .map
 export const UserName = ({ userShown, showUserShown, finishedWork }) => {
+
+    // declaring "users" that defines state
+    // declaring "Showuser" that defines function that will modify state/set value of users
+    // useState passes a value as argument and returnes ARRAY WHEN INVOKED
     const [user, showUser] = useState([])
     const [works, showWorks] = useState([])
 
@@ -31,7 +35,7 @@ export const UserName = ({ userShown, showUserShown, finishedWork }) => {
 
 
     useEffect(
-        // prop for title card for individual works on Gallery.js
+        // prop for title card for individual works on Gallery.js, setting with showWorks
         () => {
            showWorks(
                finishedWork

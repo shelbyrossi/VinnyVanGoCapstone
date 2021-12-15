@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react"
 
-// passing props to Gallery.js
+// passing props to Gallery.js // allows access to values in gallery form - what did user select?
 export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finishedWork}) => {
+
+ // declaring "materialChoices" that defines state
+    // declaring "setMaterialChoices" that defines function that will modify state/set value of materialChoices
+    // useState passes a value as argument and returnes ARRAY WHEN INVOKED
+
     const [materialChoices, setMaterialChoices] = useState([])
     const [works, showWorks] = useState([])
  
@@ -49,13 +54,15 @@ export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finished
     return (
         <>
         {
+      
         foundMaterial.map(
             (material) => {
+                             
+                <div key={`foundMaterial-${foundMaterial.id}`}></div>
                 return foundMaterial ? <div>{material.materials.type} </div>
            
         //   returning none if id & userId do not match
           : <div>"none"</div>
-                                
                            
         }
 

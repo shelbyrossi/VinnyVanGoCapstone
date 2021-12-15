@@ -16,7 +16,8 @@ import { MaterialChoices } from "./gallery/MaterialChoices"
 export const ApplicationViews = () => {
     return (
         <>
-            {/* when the url is customers, display CustomersList  */}
+            {/* when the url is bookingForm, display BookingForm  */}
+            {/* Route defines how your application will respond when the URL matches these paths */}
             <Route exact path="/bookingForm">
                 {/* child */}
                 <BookingForm />

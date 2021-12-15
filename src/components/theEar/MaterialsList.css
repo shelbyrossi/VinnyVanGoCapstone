@@ -3,7 +3,7 @@
 
 .mTitle {
     margin: 80px;
-    color: #b7784d;
+    color: #d6c583;;
     font-family: 'Montserrat', sans-serif;
     font-size: 60px;
     margin: 40px;
@@ -29,7 +29,7 @@
 .title {
 
     margin: 80px;
-    color: #b7784d;
+    color: #d6c583;
     font-family: 'Montserrat', sans-serif;
     font-size: 65px;
     margin: 60px;
@@ -42,7 +42,7 @@
      color:#675746;
     font-family: 'Lora', serif;
     padding: 10px;
-    margin: 60px;
+    margin: 10px;
     border: #ae7379 2px solid;
     border-radius: 20px;
     background-color: #d6c583;
@@ -65,6 +65,7 @@
     flex-wrap: nowrap;
     justify-content: space-evenly;
     text-transform: uppercase;
+    margin: -10px;
 
 
 }
@@ -80,12 +81,12 @@
 
 
 .News {
-    margin: 80px;
-    color: #b7784d;
+    margin: -25px;
+    color: #d6c583;
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
-    margin: 100px;
-    padding: 10px;
+    
+    padding:2px;
 }
 
 .vanImage {
@@ -99,10 +100,10 @@
     color:#675746;
     font-family: 'Lora', serif;
     padding: 20px;
-    margin: -100px;
+    margin: 20px;
     border: #b7784d 2px solid;
     border-radius: 20px;
-    background-color: #d6c583;
+    background-color: #f1e4db;
     font-size: 14px;
     width: 950px;
 
@@ -113,3 +114,4 @@
     margin: -20px;
     border: white;
 }
+
