@@ -8,7 +8,7 @@ export const ShowMaterials = () => {
     // useState passes a value as argument and returnes ARRAY WHEN INVOKED
     const [categories, setCategories] = useState([])
     const [ materials, syncMaterials] = useState([])
-    const {materialsId} = useParams()
+    const {materialsCatId} = useParams()
     
 
 
@@ -18,8 +18,8 @@ export const ShowMaterials = () => {
         // takes a function and array as arguments & runs code when state changes (event listener)
         () => {
             // Query string parameter
-            // Fetch the individual booking when the parameter value changes
-            fetch(`http://localhost:8088/materialCategory/${materialsId}`)
+            // Fetch the individual materials when the parameter value changes to id of specific material category
+            fetch(`http://localhost:8088/materialCategory/${materialsCatId}`)
                 // fetching data from the API and parsing into application state
                 .then(res => res.json())           
                 // you have final array of products defined in line 9
@@ -29,6 +29,7 @@ export const ShowMaterials = () => {
                     }
                 )
         },
+        []
       
     )
     

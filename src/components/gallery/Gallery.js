@@ -49,17 +49,17 @@ export const ShowWorks = () => {
 
 
 
-            <center> <div class="galleryTitle">GALLERY</div> </center>
+            <center> <div className="galleryTitle">GALLERY</div> </center>
             {
                 works.map(
                     (finishedWork) => {
                         
                         return <center>
-                            <div key={`showGallery-${finishedWork.id}`}></div>
+                            
                             <div class="gallery"><div key={`finishedWorks-${finishedWork.id}`}>
                                 <p>
                                 <img class="galleryPhoto" src={finishedWork.imageUrl} />
-                                </p><div class="galleryInfo">
+                                </p><div className="galleryInfo">
                                
                                     <p>Title: {finishedWork.title}</p>
                               

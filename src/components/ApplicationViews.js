@@ -51,7 +51,7 @@ export const ApplicationViews = () => {
                 <ShowWorks/>
             </Route>
 
-            <Route exact path="/materialCategory/:materialsId(\d+)">
+            <Route exact path="/materialCategory/:materialsCatId(\d+)">
                 {/* child */}
                 <ShowMaterials/>
             </Route>
