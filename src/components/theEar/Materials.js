@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import "./MaterialsList.css"
 
+// LISTS OUT MATERIALS FOR MATERIAL CATEGORY
+
 export const ShowMaterials = () => {
     // declaring "categories" that defines state
     // declaring "setCategories" that defines function that will modify state/set value of categories
