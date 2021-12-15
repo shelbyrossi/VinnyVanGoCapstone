@@ -3,6 +3,9 @@ import { useParams } from "react-router"
 import "./MaterialsList.css"
 
 export const ShowMaterials = () => {
+    // declaring "categories" that defines state
+    // declaring "setCategories" that defines function that will modify state/set value of categories
+    // useState passes a value as argument and returnes ARRAY WHEN INVOKED
     const [categories, setCategories] = useState([])
     const [ materials, syncMaterials] = useState([])
     const {materialsId} = useParams()
@@ -15,6 +18,7 @@ export const ShowMaterials = () => {
         // takes a function and array as arguments & runs code when state changes (event listener)
         () => {
             // Query string parameter
+            // Fetch the individual booking when the parameter value changes
             fetch(`http://localhost:8088/materialCategory/${materialsId}`)
                 // fetching data from the API and parsing into application state
                 .then(res => res.json())           

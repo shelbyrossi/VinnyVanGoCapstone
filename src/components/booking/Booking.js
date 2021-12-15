@@ -4,23 +4,24 @@ import { Link } from "react-router-dom"
 
 
 export const BookingList = () => {
-    // declaring variable "employees" that defines state
-    // declaring variable "assignemployees" that defines function that will modify state/set value of employees
+    // declaring "bookings" that defines state
+    // declaring "updateBookings" that defines function that will modify state/set value of bookings
     // useState passes a value as argument and returnes ARRAY WHEN INVOKED
     const [bookings, updateBookings] = useState([])
 
 
+   
     useEffect(() => { fetchBookings() }, [])
+
+
 
     const fetchBookings = () => {
         return fetch("http://localhost:8088/bookings")
-            // function that takes a function and array as arguments & runs code when state changes (event listener)
+           // fetching data from the API and parsing into application state
             .then(res => res.json())
-
-            // you have final array of customers defined in line 7
+            // you have a response of final array of bookings defined in line 10
             .then((data) => {
-                //  // function established in state variable - single argument is new state/API state
-
+                 // data = response from the fetch, setting that response with updateBookings
                 updateBookings(data)
 
             })
@@ -28,13 +29,11 @@ export const BookingList = () => {
 
 
 
-
-
-
     const deleteBooking = (id) => {
         fetch(`http://localhost:8088/bookings/${id}`, {
             method: "DELETE"
         })
+        // after delete, GET all of the bookings again to render the new state 
             .then(
                 () => { fetchBookings() }
             )
@@ -44,17 +43,18 @@ export const BookingList = () => {
 
 
 
-
     // iterate through bookings array - if vango_customer value = the value of your userId in the bookings array,
     // return that user's information
-
 
     return (
         <>
 
             <center><div class="bookingTitle"> YOUR BOOKINGS</div>
-                {
 
+            <img class="bookIcon" src="https://static.vecteezy.com/system/resources/previews/001/486/411/non_2x/open-book-icon-free-vector.jpg"/>
+
+                {
+                    
                     bookings.map(
                         (booking) => {
                             return parseInt(localStorage.getItem("vango_customer")) === booking.userId
@@ -63,7 +63,7 @@ export const BookingList = () => {
                                 <div key={`booking--${booking.id}`} >
                                     <p className={booking.id}>
                                         <div class="bookingList">
-
+                                                        {/* setting a link on "new" to route to the individual booking associated with that bookingId */}
                                             You have a  <Link to={`/booking/${booking.id}`}>new</Link> booking for {booking.name} on {booking.date}!
                                         </div>
                                         <button className="button" onClick={() => {

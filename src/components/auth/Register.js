@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./Login.css"
+import "./Register.css"
 
 export const Register = (props) => {
     const [user, setUser] = useState({})
@@ -32,7 +33,7 @@ export const Register = (props) => {
                         //  key value pair - register/post create a new customer in database and store new primary key in local storage
                         {
                                 localStorage.setItem("vango_customer", createdUser.id)
-                                history.push("/")
+                                history.push("/main")
                             }
                         })
                 }
@@ -57,23 +58,23 @@ export const Register = (props) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Vinny Van-Go</h1>
+                <h1 className="h3 mb-3 font-weight-normal"> REGISTER FOR VINNY VAN GO!</h1>
                 <fieldset>
-                    <label htmlFor="name"> Full Name </label>
+                    <label htmlFor="name"> NAME </label>
                     <input onChange={updateCustomer}
                            type="text" id="name" className="form-control"
-                           placeholder="Enter your name" required autoFocus />
+                           placeholder="Enter your full name" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="address"> Address </label>
+                    <label htmlFor="address"> ADDRESS</label>
                     <input onChange={updateCustomer} type="text" id="address" className="form-control" placeholder="Street address" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="email"> Email address </label>
+                    <label htmlFor="email"> EMAIL </label>
                     <input onChange={updateCustomer} type="email" id="email" className="form-control" placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button class="registerButton"type="submit"> Register </button>
                 </fieldset>
             </form>
         </main>

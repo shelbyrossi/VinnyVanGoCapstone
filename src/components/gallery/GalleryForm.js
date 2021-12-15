@@ -8,8 +8,10 @@ import "./Form.css"
 export const GalleryForm = () => {
     // creating hook for transient state of works and choices of materials
     const [mChoice, setmChoice] = useState({
+        // capturing the chosen Ids in new Set()
         chosenMaterials: new Set()
     })
+    // creating hook for transient state of works info
     const [works, newWork] = useState({
         title: "",
         userId: parseInt(localStorage.getItem("vango_customer")),
@@ -23,14 +25,6 @@ export const GalleryForm = () => {
 
     const history = useHistory()
 
-
-    const setMaterials = (id) => {
-        // Does the set contain the id?
-        // Ternary statement
-           mChoice.chosenMaterials.has(id)
-            ?mChoice.chosenMaterials.delete(id)  // Yes? Remove it
-            :mChoice.chosenMaterials.add(id)     // No? Add it
-    }
 
 
     const submitWork = (evt) => {
@@ -54,16 +48,17 @@ export const GalleryForm = () => {
             headers: {
                 "Content-Type": "application/json"
             },
+             // passing through newSubmission object for POST 
             body: JSON.stringify(newSubmission)
         }
 
 
 
-    
+    // // returning updated object and POSTING to API with the fetchOption
         return fetch("http://localhost:8088/works", fetchOption)
             .then(response => {
                 return response.json();
-                // returning response of fetch - new state object with id
+                // returning response of fetch - new state object
             })
             // pass above data through createMaterialChoice function
             .then((data) => {
@@ -72,7 +67,7 @@ export const GalleryForm = () => {
 
             .then(() => {
                 history.push("/Gallery")
-                // programmatically changing url to bring user back to tickets
+                // programmatically changing url to bring user back to Gallery
                 // pushing to browser history
             })
     }
@@ -107,7 +102,7 @@ export const GalleryForm = () => {
                 Promise.all(fetchArray)
                 .then(
                     () => {
-                        // remove all choices
+                        // remove all choices upon resolve
                         mChoice.chosenMaterials.clear()
                     }
                     )
@@ -125,6 +120,9 @@ export const GalleryForm = () => {
 
                 <form className="GalleryForm"><center>
                     <div class="GalleryForm__title">SUBMIT YOUR ART</div>
+
+                    <img class="paintIcon" src="https://www.svgrepo.com/show/181820/canvas-paint.svg"/>
+
                     <fieldset>
                         <div class="form-group">
                             <label htmlFor="name"></label>

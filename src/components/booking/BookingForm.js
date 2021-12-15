@@ -19,10 +19,10 @@ export const BookingForm = () => {
     const history = useHistory()
 
     const submitBooking = (evt) => {
-        // preventing default behavior of submiting ticket
+        // preventing default behavior of submiting booking
         evt.preventDefault()
         const newBooking = {
-            // from state to send to API
+            // using this object from state to send to API
             name: booking.name,
             attendance: booking.attendance,
             event: booking.event,
@@ -34,18 +34,20 @@ export const BookingForm = () => {
 
         }
 
-        // send above object to API
+       
         const fetchOption = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
+            // passing through newBooking object for POST 
             body: JSON.stringify(newBooking)
         }
+        // returning updated object and POSTING to API with the fetchOption
         return fetch("http://localhost:8088/bookings", fetchOption)
             .then(() => {
                 history.push("/bookingList")
-                // programmatically changing url to bring user back to tickets
+                // programmatically changing url to bring user back to bookingList
                 // pushing to browser history
             })
     }

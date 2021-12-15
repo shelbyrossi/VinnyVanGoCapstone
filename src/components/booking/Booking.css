@@ -22,10 +22,11 @@ div.GalleryForm {
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
+    font-family: 'Lora', serif;
   }
 
   .bookingForm__title {
-      color: #b7784d;
+      color: #d6c583;
       font-family: 'Montserrat', sans-serif;
       font-size: 70px;
       margin: 6px;
@@ -49,7 +50,7 @@ div.GalleryForm {
   }
   
   .bookingTitle {
-    color: #b7784d;
+    color: #d6c583;
     font-family: 'Montserrat', sans-serif;
     font-size: 70px;
     margin: 6px;
@@ -62,7 +63,7 @@ div.GalleryForm {
 
     color:#675746;
     font-family: 'Lora', serif;
-    padding: 12px;
+    padding: 1px;
     
 
 
@@ -73,11 +74,11 @@ div.GalleryForm {
   color:#675746;
   font-family: 'Lora', serif;
   padding: 12px;
-  margin: 160px;
+  margin:-190px;
   border: #ae7379 2px solid;
   border-radius: 20px;
   background-color: #f1e4db;
-  
+  width: 900px;
   
 }
 
@@ -85,7 +86,8 @@ div.GalleryForm {
 a:link {
   color: #687d65;
   background-color: transparent;
-  text-decoration: none;
+  text-decoration: underline;
+
 }
 
 a:visited {
@@ -107,3 +109,17 @@ a:active {
 }
 
 
+.vanimage{
+  
+  width: 80px;
+  margin: 200px;
+  border: white
+  
+}
+
+.bookIcon {
+
+  width: 80px;
+  margin: 1px;
+  border: white
+}

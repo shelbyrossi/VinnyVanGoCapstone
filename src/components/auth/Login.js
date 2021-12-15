@@ -20,7 +20,7 @@ export const Login = () => {
             .then(exists => {
                 if (exists) {
                     localStorage.setItem("vango_customer", exists.id)
-                    history.push("/")
+                    history.push("/main")
                 } else {
                     existDialog.current.showModal()
                 }
@@ -28,6 +28,7 @@ export const Login = () => {
     }
 
     return (
+    <center>
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={existDialog}>
                 <div>User does not exist</div>
@@ -36,26 +37,27 @@ export const Login = () => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Vinny Van-Go</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
+                    <div class="signIn">VINNY VAN GO SIGN IN</div>
+                    <div class="pleaseSignIn"></div>
+                   <center> <fieldset>
                         <label htmlFor="inputEmail"> </label>
                         <input type="email"
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
                             placeholder="Email address"
                             required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <button type="submit">
+                    </fieldset></center>
+                    <center><fieldset>
+                        <button class="buttonsignin" type="submit">
                             Sign in
                         </button>
-                    </fieldset>
+                    </fieldset></center>
                 </form>
             </section>
             <section className="link--register">
                 <Link to="/register">Not a member yet?</Link>
             </section>
         </main>
+            </center>
     )
 }

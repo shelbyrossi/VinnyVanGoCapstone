@@ -29,9 +29,16 @@
 
  .galleryTitle {
      margin: 80px;
-     color: #b7784d;
+     color: #d6c583;
      font-family: 'Montserrat', sans-serif;
      font-size: 90px;
      margin: 60px;
      padding: 40px;
+ }
+
+ .paintIcon {
+     width: 70px;
+     border: white;
+     margin: 1px;
+     padding: -90px;
  }

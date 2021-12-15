@@ -3,10 +3,10 @@ import "./Materials.css"
 
 // allows access to values in gallery form - what did user select
 export const MaterialsForm = ({ mChoice, setmChoice }) => {
+  // declaring materials that defines state
+    // declaring updateWorkMaterials that defines function that will modify state/set value of materials
+    // useState passes a value as argument and returnes ARRAY WHEN INVOKED
     const [materials, updateWorkMaterials] = useState([])
-
-
-    
 
 
 
@@ -40,27 +40,29 @@ export const MaterialsForm = ({ mChoice, setmChoice }) => {
                     // // parameter to capture each indivual materialOption as iterates
                     (materialOption) => {
                         // // uniquely identify <h2> with a key, use .id since unique identifier
-                        return <h6><div class="materialsList">
+                        return <h6><div class="materialsList"> 
+                         <div key={`materialCategory-${materialOption.id}`}>
+
+                            {materialOption.type}
+
+                            <input type="checkbox"
 
 
 
-                            <div key={`materialCategory-${materialOption.id}`}>
-                                {materialOption.type}
 
-                                <input type="checkbox"
+                            // Has that id already been chosen? If so, delete if not add - set choice
+                                onChange={
+                                    (evt) => {
+                                        const copy = { ...mChoice }
+                                        copy.chosenMaterials.has(materialOption.id)
+                                            ? copy.chosenMaterials.delete(materialOption.id)
 
-                                    onChange={
-                                        (evt) => {
-                                            const copy = { ...mChoice }
-                                            copy.chosenMaterials.has(materialOption.id)
-                                                ? copy.chosenMaterials.delete(materialOption.id)
-
-                                                : copy.chosenMaterials.add(materialOption.id)
-                                            setmChoice(copy)
-                                        }
+                                            : copy.chosenMaterials.add(materialOption.id)
+                                        setmChoice(copy)
                                     }
-                                    type="checkbox" />
-                            </div>
+                                }
+                                type="checkbox" />
+                        </div>
                         </div>
                         </h6>
 
