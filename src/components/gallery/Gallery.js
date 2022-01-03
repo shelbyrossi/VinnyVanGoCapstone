@@ -56,28 +56,28 @@ export const ShowWorks = () => {
                         
                         return <center>
                             
-                            <div class="gallery"><div key={`finishedWorks-${finishedWork.id}`}>
-                                <p>
-                                <img class="galleryPhoto" src={finishedWork.imageUrl} />
-                                </p><div className="galleryInfo">
-                               
-                                    <p>Title: {finishedWork.title}</p>
+                            <div className ="gallery"><div key={`finishedWorks-${finishedWork.id}`}>
                               
-                                    <p>Description: {finishedWork.description}</p>
+                                <img className ="galleryPhoto" src={finishedWork.imageUrl} />
+                                <div className="galleryInfo">
+                               
+                                    <div>Title: {finishedWork.title}</div>
+                              
+                                    <div>Description: {finishedWork.description}</div>
                                     
                                   
-                                    <p>
+                                    <div>
                                         {/* invoking UserName from Users.js and MaterialChoices from MaterialChoices.js  */}
-                                        <UserName user={userShown} showUser={showUserShown} finishedWork={finishedWork} /> </p>
+                                        <UserName user={userShown} showUser={showUserShown} finishedWork={finishedWork} /> </div>
                                         
-                                       <p> Vinny Van Go Materials Used:<MaterialChoices materialChoices={showMaterialChoice}
+                                       <div>Vinny Van Go Materials Used:<MaterialChoices materialChoices={showMaterialChoice}
                                         setMaterialChoices={setMaterialChoice} finishedWork={finishedWork}/>
                                         
 
 
 
 
-                                    </p>
+                                    </div>
 
 
                                 </div>

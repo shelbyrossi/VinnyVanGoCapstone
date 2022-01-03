@@ -44,7 +44,7 @@ export const ApplicationViews = () => {
             <Route exact path="/GalleryForm">
                 {/* child */}
                 <GalleryForm/>
-            </Route>
+                </Route>
 
             <Route exact path="/Gallery">
                 {/* child */}

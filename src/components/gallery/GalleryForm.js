@@ -115,21 +115,21 @@ export const GalleryForm = () => {
 
     return (
         <>
-            <div class="GalleryForm">
+            <div className="GalleryForm">
 
 
                 <form className="GalleryForm"><center>
-                    <div class="GalleryForm__title">SUBMIT YOUR ART</div>
+                    <div className="GalleryForm__title">SUBMIT YOUR ART</div>
 
-                    <img class="paintIcon" src="https://www.svgrepo.com/show/181820/canvas-paint.svg"/>
+                    <img className="paintIcon" src="https://www.svgrepo.com/show/181820/canvas-paint.svg"/>
 
                     <fieldset>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="name"></label>
                             <input
                                 required autoFocus
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 placeholder="Provide Title"
                                 // copying existing state with spread operator
                                 // brand new object to modify state 
@@ -150,12 +150,12 @@ export const GalleryForm = () => {
                     </fieldset>
 
                     <fieldset>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="url"></label>
                             <input
                                 required autoFocus
                                 type="url"
-                                class="form-control"
+                                className="form-control"
 
                                 placeholder="Provide Url to Art"
                                 // copying existing state for state object that is updated when user interacts
@@ -171,12 +171,12 @@ export const GalleryForm = () => {
                         </div>
                     </fieldset>
                     <fieldset>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="text"></label>
                             <input
                                 required autoFocus
                                 type="text"
-                                class="form-control"
+                                className="form-control"
 
                                 placeholder="Add a Description"
                                 // copying existing state for state object that is updated when user interacts

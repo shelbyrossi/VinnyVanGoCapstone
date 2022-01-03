@@ -51,9 +51,9 @@ export const ShowMaterials = () => {
     return (
         //  <> Fragment - putting all return elements into one JXS element 
         <>
-            <center><div class="mTitle">CURRENTLY ON VINNY VAN GO</div>
+            <center><div className="mTitle">CURRENTLY ON VINNY VAN GO</div>
 
-            <div class="mList">
+            <div className="mList">
             {
                materials.map(
                     (option) => {
@@ -77,7 +77,10 @@ export const ShowMaterials = () => {
                 )
             }
             </div>
-            <div class="stock">Have a question or suggestion about materials? Shoot us an email at VinnyVanGo@gmail.com!</div>
+            <div className="stock">
+                
+            <p> *STOCK UPDATES: We're running low on our Mineral Spirits due to a back order! Those of you who were asking for Bottled ink - it's in!*</p>
+                Have a question or suggestion about materials? Shoot us an email at VinnyVanGo@gmail.com</div>
             </center>
 
         </>
