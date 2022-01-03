@@ -6,7 +6,7 @@ export const SingleBooking = () => {
     // declaring "bookings" that defines state
     // declaring "updateBooking" that defines function that will modify state/set value of bookings
     // useState passes a value as argument and returnes ARRAY WHEN INVOKED
-    const [booking, updateBooking] = useState ({})
+    const [booking, updateBooking] = useState ([])
     const { bookingId } = useParams()  // Variable storing the route parameter
   
 
@@ -23,7 +23,7 @@ export const SingleBooking = () => {
                     // setting booking state
                     .then(updateBooking)
             },
-            [ bookingId]  // Above function runs when the value of bookingId changes
+            [bookingId]  // Above function runs when the value of bookingId changes
         )
     
         return (

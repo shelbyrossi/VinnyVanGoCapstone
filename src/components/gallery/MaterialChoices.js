@@ -58,8 +58,8 @@ export const MaterialChoices = ({showMaterialChoice, setMaterialChoice, finished
         foundMaterial.map(
             (material) => {
                              
-                <div key={`foundMaterial-${foundMaterial.id}`}></div>
-                return foundMaterial ? <div>{material.materials.type} </div>
+               
+                return foundMaterial ? <div key={`material--${material.materials.id}`}>{material.materials.type} </div>
            
         //   returning none if id & userId do not match
           : <div>"none"</div>

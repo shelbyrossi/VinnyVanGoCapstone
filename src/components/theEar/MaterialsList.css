@@ -45,7 +45,7 @@
     margin: 10px;
     border: #ae7379 2px solid;
     border-radius: 20px;
-    background-color: #d6c583;
+    background-color: #f1e4db;
     font-size: 14px;
     width: 550px;
 
@@ -73,9 +73,9 @@
 
 .stock {
 
- color:#675746;
+ color:#b7784d;
     font-family: 'Lora', serif;
-    margin: 20px;
+    margin: 60px;
 }
 
 
@@ -95,12 +95,18 @@
 
 }
 
+.partyImage {
+ margin: -10px;
+ border: white;
+
+}
+
 .newsBlock {
 
     color:#675746;
     font-family: 'Lora', serif;
-    padding: 20px;
-    margin: 20px;
+    padding: 30px;
+    margin: 30px;
     border: #b7784d 2px solid;
     border-radius: 20px;
     background-color: #f1e4db;
@@ -110,8 +116,62 @@
 
 }
 
+.newsBlock2 {
+
+    color:#675746;
+    font-family: 'Lora', serif;
+    padding: 40px;
+    margin: 40px;
+    border: #b7784d 2px solid;
+    border-radius: 20px;
+    background-color: #f1e4db;
+    font-size: 14px;
+    width: 950px;
+
+
+}
+
+.newsBlock3 {
+    
+        color:#675746;
+        font-family: 'Lora', serif;
+        padding: 40px;
+        margin: 70px;
+        border: #b7784d 2px solid;
+        border-radius: 20px;
+        background-color: #f1e4db;
+        font-size: 14px;
+        width: 950px;
+    
+    
+    }
+
+    .newsBlock4 {
+    
+        color:#675746;
+        font-family: 'Lora', serif;
+        padding: 40px;
+        margin: 20px;
+        border: #b7784d 2px solid;
+        border-radius: 20px;
+        background-color: #f1e4db;
+        font-size: 14px;
+        width: 950px;
+    
+    
+    }
+
+
+
+
 .fleaImage {
-    margin: -20px;
+    margin: -10px;
     border: white;
 }
 
+
+.earPhoto {
+    border: white;
+    margin: -20px;
+   
+}

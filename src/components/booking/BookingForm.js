@@ -166,6 +166,9 @@ export const BookingForm = () => {
                         // copying existing state for state object that is updated when user interacts
                         onChange={
                             (evt) => {
+                                // copy object and booking object copying booking state 
+                                // booking copy object now has attendance value of input 
+                                // setting booking state 
                                 const copy = { ...booking }
                                 copy.attendance= parseInt(evt.target.value)
                                 makeBooking(copy)

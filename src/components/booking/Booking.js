@@ -10,36 +10,36 @@ export const BookingList = () => {
     const [bookings, updateBookings] = useState([])
 
 
-   
-    useEffect(() => { fetchBookings() }, [])
-
-
 
     const fetchBookings = () => {
         return fetch("http://localhost:8088/bookings")
-           // fetching data from the API and parsing into application state
-            .then(res => res.json())
-            // you have a response of final array of bookings defined in line 10
+        // after fetching data, invoke function 
+           .then(res => res.json())
+              //taking json string and parsing into js 
             .then((data) => {
-                 // data = response from the fetch, setting that response with updateBookings
+                 // data = bookings converted from string to array, setting that response with updateBookings
                 updateBookings(data)
 
             })
     }
 
 
-
+    
     const deleteBooking = (id) => {
         fetch(`http://localhost:8088/bookings/${id}`, {
             method: "DELETE"
         })
         // after delete, GET all of the bookings again to render the new state 
-            .then(
-                () => { fetchBookings() }
+        .then(
+            () => { fetchBookings() }
             )
-    }
-
-
+        }
+        
+        // *LISTENING FOR STATE CHANGES AND REACTS*
+         // takes a function and array as arguments & runs code when state changes (event listener)
+        // when the state changes, fetch the bookings 
+        useEffect(() => { fetchBookings() }, [])
+        
 
 
 
@@ -49,11 +49,12 @@ export const BookingList = () => {
     return (
         <>
 
-            <center><div class="bookingTitle"> YOUR BOOKINGS</div>
+            <center><div className="bookingTitle"> YOUR BOOKINGS</div>
 
-            <img class="bookIcon" src="https://static.vecteezy.com/system/resources/previews/001/486/411/non_2x/open-book-icon-free-vector.jpg"/>
+            <img className="bookIcon" src="https://static.vecteezy.com/system/resources/previews/001/486/411/non_2x/open-book-icon-free-vector.jpg"/>
 
                 {
+                    // iterating through bookings - if the logged in user = the userId on booking 
                     
                     bookings.map(
                         (booking) => {
@@ -61,8 +62,8 @@ export const BookingList = () => {
                                 ?
 
                                 <div key={`booking--${booking.id}`} >
-                                    <p className={booking.id}>
-                                        <div class="bookingList">
+                                 
+                                        <div className="bookingList">
                                                         {/* setting a link on "new" to route to the individual booking associated with that bookingId */}
                                             You have a  <Link to={`/booking/${booking.id}`}>new</Link> booking for {booking.name} on {booking.date}!
                                         </div>
@@ -70,7 +71,7 @@ export const BookingList = () => {
                                             deleteBooking(booking.id)
                                         }}>Cancel My Booking</button>
 
-                                    </p>
+                               
 
                                 </div>
                                 : <div></div>

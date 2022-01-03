@@ -6,7 +6,7 @@ import "./Materials.css"
 
 // allows access to values in gallery form - what did user select
 export const MaterialsForm = ({ mChoice, setmChoice }) => {
-  // declaring materials that defines state
+    // declaring materials that defines state
     // declaring updateWorkMaterials that defines function that will modify state/set value of materials
     // useState passes a value as argument and returnes ARRAY WHEN INVOKED
     const [materials, updateWorkMaterials] = useState([])
@@ -16,12 +16,12 @@ export const MaterialsForm = ({ mChoice, setmChoice }) => {
     useEffect(
         () => {
             fetch("http://localhost:8088/materials")
-                 // fetching data from the API and parsing into application state
+                // fetching data from the API and parsing into application state
                 .then(res => res.json())
 
                 // you have final array of materials
                 .then((materials) =>
-                 // data = response from the fetch, setting that response with updateWorkMaterials
+                // materials = response from the fetch, setting that response with updateWorkMaterials
                 {
                     updateWorkMaterials(materials)
                 })
@@ -33,9 +33,9 @@ export const MaterialsForm = ({ mChoice, setmChoice }) => {
 
     return (
         //  <> Fragment - putting all return elements into one JXS element 
-        <><div class="materialOptions">
+        <><div className="materialOptions">
 
-            <div class="pleaseCheck">Please Check What <i>Vinny Van-Go</i> Materials Were Used</div>
+            <div className="pleaseCheck">Please Check What <i>Vinny Van-Go</i> Materials Were Used</div>
 
             {
                 // iterate employes array and convert to objects to JXS (converstion = .map())
@@ -43,17 +43,10 @@ export const MaterialsForm = ({ mChoice, setmChoice }) => {
                     // // parameter to capture each indivual materialOption as iterates
                     (materialOption) => {
                         // // uniquely identify <h2> with a key, use .id since unique identifier
-                        return <h6><div class="materialsList"> 
-                         <div key={`materialCategory-${materialOption.id}`}>
-
-                            {materialOption.type}
-
+                        return <div className="materialsList"> <div> <div key={`materialOption--${materialOption.id}`}>{materialOption.type}</div>
                             <input type="checkbox"
 
-
-
-
-                            // Has that id already been chosen? If so, delete if not add - set choice
+                                // Has that id already been chosen? If so, delete if not add - set choice
                                 onChange={
                                     (evt) => {
                                         const copy = { ...mChoice }
@@ -65,10 +58,9 @@ export const MaterialsForm = ({ mChoice, setmChoice }) => {
                                     }
                                 }
                                 type="checkbox" />
-                        </div>
-                        </div>
-                        </h6>
 
+                        </div>
+                        </div>
 
 
                     }
