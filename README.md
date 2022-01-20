@@ -1,7 +1,7 @@
 
 APPLICATION OVERVIEW:
 
-With the introduction of Instacart, DoorDash, and Amazon Prime, letting consumers stay at home with a service coming to them has become the new norm. This application lets customers book time slots for Vinny Van-Go to arrive at their home with stocked shelves of products for in person shopping - cutting the expensive cost of ordering the wrong materials online. This app can also be used for events like flea markets or craft fairs, much like a food truck, but for art supplies!
+With the introduction of Instacart, DoorDash, and Amazon Prime, letting consumers stay at home with a service coming to them has become the new norm. This application lets customers book time slots for Vinny Van-Go to arrive at their home with stocked shelves of products for in person shopping - cutting the expensive cost of ordering the wrong materials online. 
 
 
 PRIMARY FEATURES: 
